@@ -1,0 +1,20 @@
+const selector = ".button.info-button"; // target div
+const intervalMs = 10000; // 10 seconds
+
+function clickButton() {
+  const btn = document.querySelector(selector);
+  if (btn) {
+    btn.scrollIntoView({ behavior: "smooth", block: "center" });
+    btn.focus();
+    btn.click();
+    console.log("Button clicked at", new Date().toLocaleTimeString());
+  } else {
+    console.log("Button not found at", new Date().toLocaleTimeString());
+  }
+}
+
+// Start immediately and repeat every 10 seconds
+clickButton();
+setInterval(clickButton, intervalMs);
+
+alert("Auto-clicker started! Clicking every 10 seconds.");
